@@ -8,20 +8,51 @@
     <h1> Extreme Fort night carbd. </h1>
     <p> I have made a purchase to which I would like to share, the product in question being a gift card valued around $19 for the popular video game Fortnite. My primary question to the audience watching this short, roughly 20 second videoclip, is that I would like to know if any of you would have an interest in perhaps obtaining this card which I plan to provide to one of you, members of my audience. The objective for you to be able to obtain this said card, $19 in value, from me, is to share this video clip around so I can obtain a bigger fanbase, and again, share this video clip around so I can obtain a bigger fanbase, and one more time, share this video clip around so I can obtain a bigger fanbase. However, I would also like to state that users of the internet which attempt to ruin other people's day, otherwise known as 'trolls', will unfortunately have a hard time avoiding being blocked by me, the owner of this $19 gift card for the video game Fortnite. </p>
     
-    <h3>goggle map</h3>
+    <h3>gMapmap mgmpoam map</h3>
     
-    <div id="googleMap" style="width:100%;height:400px;"></div>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
+
+	
+</head>
+<body>
+
+
+
+<div id="mapid"></div>
 <script>
-function myMap() {
-var mapProp= {
-  center:new google.maps.LatLng(51.508742,-0.120850),
-  zoom:5,
-};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
+
+	var mymap = L.map('mapid').setView([51.14471, -2.69866], 13);
+
+	//L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+       	//maxZoom: 20,
+	//	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+	//		'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	//	id: 'mapbox/streets-v11',
+	//	tileSize: 512,
+	//	zoomOffset: -1
+	//}).addTo(mymap);
+	
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    maxNativeZoom: 19,	
+	    maxZoom: 20,
+	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mymap);	
+
+        var marker = L.marker([51.14471, -2.69866]).addTo(mymap);
+	var college = L.marker([51.129852, -2.7334955]).addTo(mymap);
+	var college1 = L.marker([51.129952, -2.7334955]).addTo(mymap);
+	marker.bindPopup("<img class='popup' src='tor.jpg'/><br /><b>Glastonbury Tor</b>").openPopup();
+	college.bindPopup("<b>C Block</b><br>Strode College").openPopup();
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap"></script>
-  </body>
+
+
+</body>
 </html>
