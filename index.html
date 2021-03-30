@@ -21,6 +21,21 @@
 
 
 
+<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="L.Control.MousePosition.js"></script>
+
+	
+</head>
+<body>
+
+
+
 <div id="mapid"></div>
 <script>
 
@@ -39,10 +54,13 @@
 	    maxNativeZoom: 19,	
 	    maxZoom: 20,
 	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(mymap);	
+        }).addTo(mymap);
+	
+	L.control.mousePosition().addTo(mymap);
 
         var marker = L.marker([51.14471, -2.69866]).addTo(mymap);
 	var college = L.marker([51.129852, -2.7334955]).addTo(mymap);
+	
 	var college1 = L.marker([51.129952, -2.7334955]).addTo(mymap);
 	marker.bindPopup("<img class='popup' src='tor.jpg'/><br /><b>Glastonbury Tor</b>").openPopup();
 	college.bindPopup("<b>C Block</b><br>Strode College").openPopup();
